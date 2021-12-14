@@ -1,13 +1,18 @@
 import React from 'react';
-import { ComponenteEj } from './components/ComponenteEj';
+import { Lista } from './components/Lista';
 
 export function App() {
+  //Lista de elementos
+  let listaElementos1 = ['Elemento 1', 'Elemento 2', 'Elemento 3'];
+  //Añadimos un elemento al final de la lista
+  listaElementos1.push('Elemento 4');
+
   return (
     <div>
       <h1>Hola (desde componente)</h1>
-      <ComponenteEj titulo="Componente 1" icono=":)" />
-      <ComponenteEj titulo="Componente 2" icono=":(" />
-      <ComponenteEj titulo="Componente 3" icono=";)" />
+      <Lista titulo="Componente 1" icono=":)" elementos={listaElementos1} />
+      <Lista titulo="Componente 2" icono=":(" elementos={listaElementos1} />
+      <Lista titulo="Componente 3" icono=";)" elementos={listaElementos1} />
     </div>
   );
 }
