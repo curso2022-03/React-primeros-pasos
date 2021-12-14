@@ -5,7 +5,9 @@ export function App() {
   return (
     <div>
       <h1>Hola (desde componente)</h1>
-      <ComponenteEj />
+      <ComponenteEj icono=":)" />
+      <ComponenteEj icono=":(" />
+      <ComponenteEj icono=";)" />
     </div>
   );
 }
