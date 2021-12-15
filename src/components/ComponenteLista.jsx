@@ -1,4 +1,5 @@
 import React from 'react';
+import './Componente-lista.css';
 export function ComponenteLista(props) {
   let claseLista = '';
   if (props.done) {
