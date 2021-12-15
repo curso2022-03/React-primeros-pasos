@@ -4,7 +4,12 @@ export function Lista(props) {
   let listaComponentes = [];
   if (props.elementos !== undefined) {
     for (let i = 0; i < props.elementos.length; i++) {
-      listaComponentes.push(<ComponenteLista texto={props.elementos[i]} />);
+      listaComponentes.push(
+        <ComponenteLista
+          done={props.elementos[i].done}
+          texto={props.elementos[i].texto}
+        />
+      );
     }
   }
 
