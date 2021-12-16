@@ -28,7 +28,7 @@ export function App() {
       />
       <Lista
         titulo="Lista de la compra"
-        icono="🛍"
+        icono="🛒"
         elementos={listaElementos2}
       />
       <Lista titulo="Tareas del curso" icono="🏫" elementos={listaElementos3} />
