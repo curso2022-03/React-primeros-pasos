@@ -1,18 +1,11 @@
 import React from 'react';
 import './Componente-lista.css';
 export function ComponenteLista(props) {
-  let claseLista = '';
+  let claseLista = props.prioridad;
   if (props.done) {
-    claseLista = 'el-checked';
+    claseLista += ' el-done';
   } else {
-    claseLista = 'el-unchecked';
-  }
-  if (props.prioridad === 'alta') {
-    claseLista += ' alta';
-  } else if (props.prioridad === 'media') {
-    claseLista += ' media';
-  } else {
-    claseLista += ' baja';
+    claseLista += ' el-undone';
   }
   return (
     <li className={claseLista}>
