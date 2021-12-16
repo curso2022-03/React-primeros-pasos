@@ -20,10 +20,18 @@ export function App() {
   ];
   return (
     <div>
-      <h1>Hola (desde componente)</h1>
-      <Lista titulo="Componente 1" icono=":)" elementos={listaElementos1} />
-      <Lista titulo="Componente 2" icono=":(" elementos={listaElementos2} />
-      <Lista titulo="Componente 3" icono=";)" elementos={listaElementos3} />
+      <h1>Listas de tareas</h1>
+      <Lista
+        titulo="Tareas de la casa"
+        icono="🏡"
+        elementos={listaElementos1}
+      />
+      <Lista
+        titulo="Lista de la compra"
+        icono="🛍"
+        elementos={listaElementos2}
+      />
+      <Lista titulo="Tareas del curso" icono="🏫" elementos={listaElementos3} />
     </div>
   );
 }

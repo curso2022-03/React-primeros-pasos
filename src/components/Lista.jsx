@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponenteLista } from './ComponenteLista';
+import ComponenteLista from './ComponenteLista';
 export function Lista(props) {
   let listaComponentes = [];
   if (props.elementos !== undefined) {
