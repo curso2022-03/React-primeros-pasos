@@ -7,7 +7,13 @@ export function ComponenteLista(props) {
   } else {
     claseLista = 'el-unchecked';
   }
-
+  if (props.prioridad === 'alta') {
+    claseLista += ' alta';
+  } else if (props.prioridad === 'media') {
+    claseLista += ' media';
+  } else {
+    claseLista += ' baja';
+  }
   return (
     <li className={claseLista}>
       {props.texto}

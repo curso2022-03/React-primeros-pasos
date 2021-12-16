@@ -1,3 +1,12 @@
 li.el-checked {
   font-weight: bold;
 }
+li.alta {
+  color: red;
+}
+li.media {
+  color: blueviolet;
+}
+li.baja {
+  color: green;
+}
