@@ -9,11 +9,11 @@ export function App() {
     { done: false, texto: 'Elemento 3', prioridad: 'media' },
   ];
   //Añadimos un elemento al final de la lista
-  listaElementos1.push({ done: true, texto: 'Elemento 4', prioridad: 'baja' });
+  listaElementos1.push({ done: true, texto: 'Elemento 4' });
   let listaElementos2 = [
     { done: true, texto: 'Elemento 1', prioridad: 'media' },
     { done: false, texto: 'Elemento 2', prioridad: 'alta' },
-    { done: true, texto: 'Elemento 3', prioridad: 'baja' },
+    { done: true, texto: 'Elemento 3' },
   ];
   let listaElementos3 = [
     { done: true, texto: 'Elemento 1', prioridad: 'media' },

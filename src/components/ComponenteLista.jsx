@@ -14,3 +14,7 @@ export function ComponenteLista(props) {
     </li>
   );
 }
+
+ComponenteLista.defaultProps = {
+  prioridad: 'baja',
+};
