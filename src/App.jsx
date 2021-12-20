@@ -4,19 +4,19 @@ import { Lista } from './components/Lista';
 export function App() {
   //Lista de elementos
   let listaElementos1 = [
-    { done: false, texto: 'Elemento 1', prioridad: 'baja' },
-    { done: true, texto: 'Elemento 2', prioridad: 'alta' },
-    { done: false, texto: 'Elemento 3', prioridad: 'media' },
+    { done: false, texto: 'Tirar la basura', prioridad: 'baja' },
+    { done: true, texto: 'Limiar el baño', prioridad: 'alta' },
+    { done: false, texto: 'Hacer la compra', prioridad: 'media' },
   ];
   //Añadimos un elemento al final de la lista
-  listaElementos1.push({ done: true, texto: 'Elemento 4' });
+  listaElementos1.push({ done: true, texto: 'Mantenimiento PC' });
   let listaElementos2 = [
-    { done: true, texto: 'Elemento 1', prioridad: 'media' },
-    { done: false, texto: 'Elemento 2', prioridad: 'alta' },
-    { done: true, texto: 'Elemento 3' },
+    { done: true, texto: 'Tomates', prioridad: 'media' },
+    { done: false, texto: 'Queso', prioridad: 'alta' },
+    { done: true, texto: 'Pilas' },
   ];
   let listaElementos3 = [
-    { done: true, texto: 'Elemento 1', prioridad: 'media' },
+    { done: true, texto: 'Tarea de DI', prioridad: 'media' },
   ];
   return (
     <div>
