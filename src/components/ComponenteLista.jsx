@@ -3,28 +3,33 @@ import './Componente-lista.css';
 class ComponenteLista extends React.Component {
   constructor(props) {
     super(props);
-    this.done = props.done;
+    this.state = {
+      done: props.done,
+    };
     this.prioridad = props.prioridad;
     this.texto = props.texto;
-    this.setElementClass();
   }
 
   setElementClass() {
     this.claseLista = this.prioridad;
-    if (this.done) {
+    if (this.state.done) {
       this.claseLista += ' el-done';
     } else {
       this.claseLista += ' el-undone';
     }
   }
-  setTaskStatus() {
-    this.done = !this.done;
-    this.setElementClass();
+  changeStatus() {
+    this.setState({ done: !this.state.done });
   }
   render() {
+    this.setElementClass();
     return (
       <li className={this.claseLista}>
-        <input type="checkbox" onChange={this.setTaskStatus()} />
+        <input
+          type="checkbox"
+          defaultChecked={this.state.done}
+          onChange={this.changeStatus.bind(this)}
+        />
         {this.texto}
       </li>
     );
