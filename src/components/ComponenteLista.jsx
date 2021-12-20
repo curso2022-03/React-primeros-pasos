@@ -38,4 +38,5 @@ class ComponenteLista extends React.Component {
 export default ComponenteLista;
 ComponenteLista.defaultProps = {
   prioridad: 'baja',
+  done: false,
 };

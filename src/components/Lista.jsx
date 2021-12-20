@@ -19,7 +19,7 @@ export function Lista(props) {
   const valorTextInput = useRef();
   const funcion = function addElement() {
     const newLista = listaComponentes.concat(
-      <ComponenteLista done={false} texto={valorTextInput.current.value} />
+      <ComponenteLista texto={valorTextInput.current.value} />
     );
     setListaComponentes(newLista);
   };
