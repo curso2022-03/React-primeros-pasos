@@ -1,5 +1,5 @@
 import React from 'react';
-import { Lista } from './components/Lista';
+import Lista from './components/Lista';
 
 export function App() {
   //Lista de elementos

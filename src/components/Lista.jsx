@@ -1,53 +1,66 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import ComponenteLista from './ComponenteLista';
-export function Lista(props) {
-  const listaInicial = [];
+class Lista extends React.Component {
+  constructor(props) {
+    super(props);
+    this.listaInicial = [];
+    this.listaComponentes = [];
+    this.tareaIntroducida = React.createRef();
+    this.prioridadSeleccionada = React.createRef();
+    this.state = {
+      listaComponentes: this.listaInicial,
+    };
+  }
 
-  if (props.elementos !== undefined) {
-    for (let i = 0; i < props.elementos.length; i++) {
-      listaInicial.push(
-        <ComponenteLista
-          done={props.elementos[i].done}
-          texto={props.elementos[i].texto}
-          prioridad={props.elementos[i].prioridad}
-        />
-      );
+  setElements() {
+    if (this.props.elementos !== undefined) {
+      for (let i = 0; i < this.props.elementos.length; i++) {
+        this.listaInicial.push(
+          <ComponenteLista
+            done={this.props.elementos[i].done}
+            texto={this.props.elementos[i].texto}
+            prioridad={this.props.elementos[i].prioridad}
+          />
+        );
+      }
     }
   }
 
-  const [listaComponentes, setListaComponentes] = useState([listaInicial]);
-  const valorTextInput = useRef();
-  const valorSelect = useRef();
-  const funcion = function addElement() {
-    const newLista = listaComponentes.concat(
+  addElement() {
+    const newLista = this.state.listaComponentes.concat(
       <ComponenteLista
-        texto={valorTextInput.current.value}
-        prioridad={valorSelect.current.value}
+        texto={this.tareaIntroducida.current.value}
+        prioridad={this.prioridadSeleccionada.current.value}
       />
     );
-    setListaComponentes(newLista);
-  };
-  return (
-    <div>
-      {props.titulo} - {props.icono}
-      <ul>
-        {listaComponentes}
-        <li>
-          <input
-            ref={valorTextInput}
-            type="text"
-            placeholder="Introduce una tarea"
-          />
-          <label>Prioridad: </label>
-          <select ref={valorSelect}>
-            <option>baja</option>
-            <option>media</option>
-            <option>alta</option>
-          </select>
-          <br />
-          <button onClick={funcion}>Añadir</button>
-        </li>
-      </ul>
-    </div>
-  );
+    this.setState({ listaComponentes: newLista });
+    //alert(this.tareaIntroducida.current.value);
+  }
+  render() {
+    this.setElements();
+    return (
+      <div>
+        {this.props.titulo} - {this.props.icono}
+        <ul>
+          {this.state.listaComponentes}
+          <li>
+            <input
+              ref={this.tareaIntroducida}
+              type="text"
+              placeholder="Introduce una tarea"
+            />
+            <label>Prioridad: </label>
+            <select ref={this.prioridadSeleccionada}>
+              <option>baja</option>
+              <option>media</option>
+              <option>alta</option>
+            </select>
+            <br />
+            <button onClick={this.addElement.bind(this)}>Añadir</button>
+          </li>
+        </ul>
+      </div>
+    );
+  }
 }
+export default Lista;
