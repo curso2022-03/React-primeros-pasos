@@ -34,7 +34,6 @@ class Lista extends React.Component {
       />
     );
     this.setState({ listaComponentes: newLista });
-    //alert(this.tareaIntroducida.current.value);
   }
   render() {
     this.setElements();
