@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import ComponenteLista from './ComponenteLista';
-export function Lista(props) {
+export default function Lista(props) {
   const listaInicial = [];
 
   if (props.elementos !== undefined) {
