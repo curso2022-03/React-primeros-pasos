@@ -1,0 +1,17 @@
+header {
+  background: rgba(0, 0, 0, 0.863);
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+}
+.logo-text {
+  display: flex;
+  line-height: 550%;
+}
+.text-header {
+  color: white;
+}
+body {
+  padding-top: 60px;
+}
