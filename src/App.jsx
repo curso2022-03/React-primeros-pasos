@@ -20,6 +20,7 @@ export function App() {
   ];
   return (
     <div>
+      <Header />
       <h1>Listas de tareas</h1>
       <Lista
         titulo="Tareas de la casa"
