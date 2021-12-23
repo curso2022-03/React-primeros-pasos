@@ -22,7 +22,7 @@ export function App() {
   return (
     <div>
       <Header />
-      <body>
+      <div className="elementosLista">
         <h1>Listas de tareas</h1>
         <Lista
           titulo="Tareas de la casa"
@@ -34,8 +34,12 @@ export function App() {
           icono="🛒"
           elementos={listaElementos2}
         />
-      </body>
-      <Lista titulo="Tareas del curso" icono="🏫" elementos={listaElementos3} />
+        <Lista
+          titulo="Tareas del curso"
+          icono="🏫"
+          elementos={listaElementos3}
+        />
+      </div>
     </div>
   );
 }

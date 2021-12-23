@@ -3,7 +3,7 @@ import './Header.css';
 export default function Header(props) {
   return (
     <header>
-      <div class="logo-text">
+      <div className="logo-text">
         <img
           src="https://hdwallpaperim.com/wp-content/uploads/2017/08/25/461264-reactJS-Facebook-JavaScript-minimalism-artwork-simple_background-748x421.jpg"
           width="200"
@@ -11,7 +11,7 @@ export default function Header(props) {
           id="logo"
           alt="logo"
         />
-        <h1 class="text-header">Usando react</h1>
+        <h1 className="text-header">Usando react</h1>
       </div>
     </header>
   );
