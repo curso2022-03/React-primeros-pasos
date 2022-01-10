@@ -1,5 +1,7 @@
 import React from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
+
 export default function Header(props) {
   return (
     <header>
@@ -12,6 +14,17 @@ export default function Header(props) {
           alt="logo"
         />
         <h1 className="text-header">Usando react</h1>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/listas">Lista de tareas</Link>
+          </li>
+          <li>
+            <Link to="/perfil">Perfil</Link>
+          </li>
+        </ul>
       </div>
     </header>
   );

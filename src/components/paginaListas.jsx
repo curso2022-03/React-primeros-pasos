@@ -20,8 +20,7 @@ export function PaginaListas() {
     { done: true, texto: 'Tarea de DI', prioridad: 'media' },
   ];
   return (
-    <div>   
-      <div className="elementosLista">
+    <div className="pagina">   
         <h1>Listas de tareas</h1>
         <Lista
           titulo="Tareas de la casa"
@@ -38,7 +37,7 @@ export function PaginaListas() {
           icono="🏫"
           elementos={listaElementos3}
         />
-      </div>
+
     </div>
   );
 }
