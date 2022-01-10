@@ -13,10 +13,26 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  color: white;
 }
 
-.text-header {
+header div li {
+  display: inline-block;
+  line-height: 80%;
+  margin: 0 5px;
+}
+header div li a {
   color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 17px;
+  padding: 7px 10px;
+  border-radius: 3%;
+}
+a.active,
+a:hover {
+  background: rgb(87, 86, 86);
+  transition: 0.5s;
 }
 .pagina {
   padding-top: 150px;
