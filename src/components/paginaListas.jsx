@@ -1,7 +1,6 @@
 import React from 'react';
 import Lista from './Lista';
 
-
 export function PaginaListas() {
   //Lista de elementos
   let listaElementos1 = [
@@ -20,24 +19,19 @@ export function PaginaListas() {
     { done: true, texto: 'Tarea de DI', prioridad: 'media' },
   ];
   return (
-    <div className="pagina">   
-        <h1>Listas de tareas</h1>
-        <Lista
-          titulo="Tareas de la casa"
-          icono="🏡"
-          elementos={listaElementos1}
-        />
-        <Lista
-          titulo="Lista de la compra"
-          icono="🛒"
-          elementos={listaElementos2}
-        />
-        <Lista
-          titulo="Tareas del curso"
-          icono="🏫"
-          elementos={listaElementos3}
-        />
-
+    <div className="pagina">
+      <h1>Listas de tareas</h1>
+      <Lista
+        titulo="Tareas de la casa"
+        icono="🏡"
+        elementos={listaElementos1}
+      />
+      <Lista
+        titulo="Lista de la compra"
+        icono="🛒"
+        elementos={listaElementos2}
+      />
+      <Lista titulo="Tareas del curso" icono="🏫" elementos={listaElementos3} />
     </div>
   );
 }
