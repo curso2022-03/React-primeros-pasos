@@ -53,7 +53,7 @@ class Header extends React.Component {
            */}
           {MenuItems.map((item) => {
             return (
-              <li>
+              <li key={item.id}>
                 <Link to={item.path}>{item.title}</Link>
               </li>
             );
