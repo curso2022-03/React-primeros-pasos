@@ -7,6 +7,11 @@ export function App() {
   return (
     <Router>
       <Header />
+      {/** Si no tenemos un id añadir al map otro elemento :
+       * MenuItems.map((item, index)
+       * y luego en la key seia
+       * key={index}
+       */}
       {MenuItems.map((item) => {
         return (
           <Route
