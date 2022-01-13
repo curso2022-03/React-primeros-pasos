@@ -22,8 +22,8 @@ class Header extends React.Component {
     }
     return listaComponentes;
   }
-  changeCliked(){
-    this.setState({clicked:!this.state.clicked});
+  changeClicked() {
+    this.setState({ clicked: !this.state.clicked });
   }
   render() {
     return (
@@ -53,18 +53,20 @@ class Header extends React.Component {
         {/**
          * Forma 3:map (funcion flecha)
          */}
-        <ul className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}>
+        <div className="menu-icon" onClick={this.changeClicked.bind(this)}>
+          <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'} />
+        </div>
+        <ul
+          className={this.state.clicked ? 'navbar-menu active' : 'navbar-menu'}
+        >
           {MenuItems.map((item) => {
             return (
-              <li key={item.id}>
+              <li key={item.id} className="navbar-link">
                 <Link to={item.path}>{item.title}</Link>
               </li>
             );
           })}
         </ul>
-        <div className="menu-icon"onClick={this.changeCliked().bind(this)}>
-          <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}/>
-        </div>
       </nav>
     );
   }
