@@ -1,11 +1,12 @@
 import React from 'react';
-import './Header.css';
+import './header.css';
 import { Link } from 'react-router-dom';
 import { MenuItems } from '../data/MenuItems';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { clicked: false };
   }
   /**
    * Forma menu nº1: bucle for
@@ -21,36 +22,38 @@ class Header extends React.Component {
     }
     return listaComponentes;
   }
+  changeCliked(){
+    this.setState({clicked:!this.state.clicked});
+  }
   render() {
     return (
-      <header>
-        <div className="logo-text">
+      <nav className="header-navbar">
+        <div className="navbar-logo">
           <img
-            src="https://hdwallpaperim.com/wp-content/uploads/2017/08/25/461264-reactJS-Facebook-JavaScript-minimalism-artwork-simple_background-748x421.jpg"
-            width="200"
-            height="150"
-            id="logo"
-            alt="logo"
+            className="logo-image"
+            src="https://eu01.edcwb.com/buscador/img/centros/logogrande/7348-a9c730d6b2b644f5b9910364ba6af277.jpg"
           />
-          <h1 className="text-header">Usando react</h1>
-          {/**
-           * Para la forma 1:
-           *  <ul>{this.createMenuLinks()}</ul>
-           */}
-          {/**
-           * Forma 2:map (funcion)
-           * {MenuItems.map(function(item){
-           * return (
-           * <li>
-           *  <Link to={item.path}>{item.title}</Link>
-           * </li>
-           * );
-           * })}
-           * </ul>
-           */}
-          {/**
-           * Forma 3:map (funcion flecha)
-           */}
+          <i className="fas fa-user-graduate" />
+        </div>
+        {/**
+         * Para la forma 1:
+         *  <ul>{this.createMenuLinks()}</ul>
+         */}
+        {/**
+         * Forma 2:map (funcion)
+         * {MenuItems.map(function(item){
+         * return (
+         * <li>
+         *  <Link to={item.path}>{item.title}</Link>
+         * </li>
+         * );
+         * })}
+         * </ul>
+         */}
+        {/**
+         * Forma 3:map (funcion flecha)
+         */}
+        <ul className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}>
           {MenuItems.map((item) => {
             return (
               <li key={item.id}>
@@ -58,8 +61,11 @@ class Header extends React.Component {
               </li>
             );
           })}
+        </ul>
+        <div className="menu-icon"onClick={this.changeCliked().bind(this)}>
+          <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}/>
         </div>
-      </header>
+      </nav>
     );
   }
 }
