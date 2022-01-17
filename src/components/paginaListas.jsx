@@ -19,7 +19,7 @@ export function PaginaListas() {
     { done: true, texto: 'Tarea de DI', prioridad: 'media' },
   ];
   return (
-    <div className="pagina">
+    <div className="main-site">
       <h1>Listas de tareas</h1>
       <Lista
         titulo="Tareas de la casa"
