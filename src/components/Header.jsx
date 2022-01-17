@@ -25,6 +25,7 @@ class Header extends React.Component {
   changeClicked() {
     this.setState({ clicked: !this.state.clicked });
   }
+
   render() {
     return (
       <nav className="header-navbar">
@@ -62,7 +63,11 @@ class Header extends React.Component {
           {MenuItems.map((item) => {
             return (
               <li key={item.id}>
-                <Link to={item.path} className="navbar-link">
+                <Link
+                  to={item.path}
+                  className="navbar-link"
+                  onClick={this.changeClicked.bind(this)}
+                >
                   {item.title}
                 </Link>
               </li>
