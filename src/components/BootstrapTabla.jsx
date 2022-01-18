@@ -1,6 +1,7 @@
 import React from 'react';
-import { ContenidoTabla } from '../data/ContenidoTabla';
-import { Table } from 'react-bootstrap';
+import { CabeceraTabla, ContenidoTabla } from '../data/ContenidoTabla';
+import { Table, Card } from 'react-bootstrap';
+import Container from 'react-bootstrap/esm/Container';
 class BootstrapTabla extends React.Component {
   constructor(props) {
     super(props);
@@ -11,12 +12,17 @@ class BootstrapTabla extends React.Component {
       <Table responsive>
         <thead>
           <tr>
-            {ContenidoTabla[0].map((item) => {
+            {CabeceraTabla.map((item) => {
               return <th>{item}</th>;
             })}
           </tr>
         </thead>
         <tbody>
+          <tr>
+            {ContenidoTabla[0].map((item) => {
+              return <td>{item}</td>;
+            })}
+          </tr>
           <tr>
             {ContenidoTabla[1].map((item) => {
               return <td>{item}</td>;
@@ -24,11 +30,6 @@ class BootstrapTabla extends React.Component {
           </tr>
           <tr>
             {ContenidoTabla[2].map((item) => {
-              return <td>{item}</td>;
-            })}
-          </tr>
-          <tr>
-            {ContenidoTabla[3].map((item) => {
               return <td>{item}</td>;
             })}
           </tr>

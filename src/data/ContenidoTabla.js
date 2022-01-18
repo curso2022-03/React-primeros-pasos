@@ -1,5 +1,14 @@
+export const CabeceraTabla = [
+  'Lunes',
+  'Martes',
+  'Miercoles',
+  'Jueves',
+  'Viernes',
+  'Sabado',
+  'Domingo',
+];
+
 export const ContenidoTabla = [
-  ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'],
   [
     'Soleado ☀️',
     'Nublado ⛅',
