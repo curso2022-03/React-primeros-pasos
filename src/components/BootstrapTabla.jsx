@@ -12,33 +12,25 @@ class BootstrapTabla extends React.Component {
         <thead>
           <tr>
             {ContenidoTabla[0].map((item) => {
-                return (
-                  <th>{item}</th>
-                );
-              })}
+              return <th>{item}</th>;
+            })}
           </tr>
         </thead>
         <tbody>
           <tr>
             {ContenidoTabla[1].map((item) => {
-                return (
-                  <td>{item}</td>
-                );
-              })}
+              return <td>{item}</td>;
+            })}
           </tr>
           <tr>
             {ContenidoTabla[2].map((item) => {
-                return (
-                  <td>{item}</td>
-                );
-              })}
+              return <td>{item}</td>;
+            })}
           </tr>
           <tr>
             {ContenidoTabla[3].map((item) => {
-                return (
-                  <td>{item}</td>
-                );
-              })}
+              return <td>{item}</td>;
+            })}
           </tr>
         </tbody>
       </Table>
