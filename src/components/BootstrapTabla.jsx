@@ -1,4 +1,5 @@
 import React from 'react';
+import { ContenidoTabla } from '../data/ContenidoTabla';
 import { Table } from 'react-bootstrap';
 class BootstrapTabla extends React.Component {
   constructor(props) {
@@ -10,30 +11,34 @@ class BootstrapTabla extends React.Component {
       <Table responsive>
         <thead>
           <tr>
-            <th>#</th>
-            {Array.from({ length: 12 }).map((_, index) => (
-              <th key={index}>Table heading</th>
-            ))}
+            {ContenidoTabla[0].map((item) => {
+                return (
+                  <th>{item}</th>
+                );
+              })}
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            {Array.from({ length: 12 }).map((_, index) => (
-              <td key={index}>Table cell {index}</td>
-            ))}
+            {ContenidoTabla[1].map((item) => {
+                return (
+                  <td>{item}</td>
+                );
+              })}
           </tr>
           <tr>
-            <td>2</td>
-            {Array.from({ length: 12 }).map((_, index) => (
-              <td key={index}>Table cell {index}</td>
-            ))}
+            {ContenidoTabla[2].map((item) => {
+                return (
+                  <td>{item}</td>
+                );
+              })}
           </tr>
           <tr>
-            <td>3</td>
-            {Array.from({ length: 12 }).map((_, index) => (
-              <td key={index}>Table cell {index}</td>
-            ))}
+            {ContenidoTabla[3].map((item) => {
+                return (
+                  <td>{item}</td>
+                );
+              })}
           </tr>
         </tbody>
       </Table>
