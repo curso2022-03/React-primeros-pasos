@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Container, Table, Row, Col } from 'react-bootstrap';
 import { TitulosTablaCoches, DatosTablaCoches } from '../data/DatosCoches';
+import uuid from 'react-uuid';
 class Coches extends React.Component {
   constructor(props) {
     super(props);
@@ -14,7 +15,7 @@ class Coches extends React.Component {
             <Col lg={8} md={6}>
               <Table responsive striped>
                 <thead>
-                  <tr>
+                  <tr key={uuid()}>
                     <th>{TitulosTablaCoches.id}</th>
                     <th>{TitulosTablaCoches.field1}</th>
                     <th>{TitulosTablaCoches.field2}</th>
@@ -24,7 +25,7 @@ class Coches extends React.Component {
                 <tbody>
                   {DatosTablaCoches.map((item) => {
                     return (
-                      <tr>
+                      <tr key={uuid()}>
                         <td>{item.matricula}</td>
                         <td>{item.marca}</td>
                         <td>{item.modelo}</td>

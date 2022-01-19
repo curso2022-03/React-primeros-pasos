@@ -2,6 +2,7 @@ import React from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { MenuItems } from '../data/MenuItems';
 import { Link } from 'react-router-dom';
+import uuid from 'react-uuid';
 
 class BootstrapHeader extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class BootstrapHeader extends React.Component {
             <Nav>
               {MenuItems.map((item) => {
                 return (
-                  <Nav.Link as={Link} to={item.path}>
+                  <Nav.Link key={uuid()} as={Link} to={item.path}>
                     {item.title}
                   </Nav.Link>
                 );

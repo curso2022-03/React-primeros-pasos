@@ -5,7 +5,6 @@ class Lista extends React.Component {
   constructor(props) {
     super(props);
     this.listaInicial = [];
-    this.listaComponentes = [];
     this.tareaIntroducida = React.createRef();
     this.prioridadSeleccionada = React.createRef();
     this.state = {
