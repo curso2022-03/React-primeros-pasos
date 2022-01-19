@@ -1,4 +1,4 @@
-export const CabeceraTabla = ['Dia', 'Tiempo', 'Temperatura', 'Viento'];
+export const CabeceraTabla = ['Día', 'Tiempo', 'Temperatura', 'Viento'];
 
 export const ContenidoTabla = [
   {

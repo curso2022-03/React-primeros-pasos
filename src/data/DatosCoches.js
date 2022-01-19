@@ -12,12 +12,17 @@ export const DatosTablaCoches = [
     marca: 'Peugeot',
     modelo: 'Partner',
     color: 'rojo',
+    imagen:
+      'https://img.remediosdigitales.com/489069/peugeot-partner-outdoor-1/1366_2000.jpg',
+    descripción: 'Un coche perfecto para trabajar',
   },
   {
     matricula: '1111 YES',
     marca: 'Hyundai',
     modelo: 'ix35',
     color: 'verde',
+    imagen: 'https://www.canalcar.es/uploads/car/thumbs/156147_m.jpg',
+    descripción: 'Un coche para escapadas por el campo',
   },
   {
     matricula: '2222 WOW',
@@ -33,5 +38,8 @@ export const DatosTablaCoches = [
     marca: 'Subaru',
     modelo: 'Impreza',
     color: 'azul',
+    imagen:
+      'https://www.motor.es/fotos-noticias/2021/01/subaru-impreza-historia-202174296-1610112787_1.jpg',
+    descripción: 'Un coche deportivo',
   },
 ];

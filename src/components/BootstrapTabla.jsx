@@ -6,13 +6,13 @@ import uuid from 'react-uuid';
 class BootstrapTabla extends React.Component {
   constructor(props) {
     super(props);
-    this.cardInicial = '';
+    this.card = '';
     this.state = {
       dia: 0,
     };
   }
   setTarjeta() {
-    this.cardInicial = (
+    this.card = (
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={ContenidoTabla[this.state.dia].imagen} />
         <Card.Body>
@@ -79,7 +79,7 @@ class BootstrapTabla extends React.Component {
             </Table>
           </Col>
           <Col lg={4} md={6}>
-            {this.cardInicial}
+            {this.card}
           </Col>
         </Row>
       </Container>

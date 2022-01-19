@@ -5,8 +5,42 @@ import uuid from 'react-uuid';
 class Coches extends React.Component {
   constructor(props) {
     super(props);
+    this.card = '';
+    this.state = {
+      coche: 0,
+    };
+  }
+  setTarjeta() {
+    this.card = (
+      <Card style={{ width: '18rem' }}>
+        <Card.Img
+          variant="top"
+          src={DatosTablaCoches[this.state.coche].imagen}
+        />
+        <Card.Body>
+          <Card.Title>
+            {DatosTablaCoches[this.state.coche].marca}{' '}
+            {DatosTablaCoches[this.state.coche].modelo}
+          </Card.Title>
+          <Card.Text>
+            Matrícula: {DatosTablaCoches[this.state.coche].matricula}
+            <p />
+            {DatosTablaCoches[this.state.coche].descripción}
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    );
+  }
+  cambiaTarjeta(pulsado) {
+    for (let i = 0; i < DatosTablaCoches.length; i++) {
+      if (pulsado == DatosTablaCoches[i].matricula) {
+        this.setState({ coche: i });
+        break;
+      }
+    }
   }
   render() {
+    this.setTarjeta();
     return (
       <div className="main-site">
         <h1>Coches</h1>
@@ -25,7 +59,10 @@ class Coches extends React.Component {
                 <tbody>
                   {DatosTablaCoches.map((item) => {
                     return (
-                      <tr key={uuid()}>
+                      <tr
+                        key={uuid()}
+                        onClick={() => this.cambiaTarjeta(item.matricula)}
+                      >
                         <td>{item.matricula}</td>
                         <td>{item.marca}</td>
                         <td>{item.modelo}</td>
@@ -37,19 +74,7 @@ class Coches extends React.Component {
               </Table>
             </Col>
             <Col lg={4} md={6}>
-              <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={DatosTablaCoches[2].imagen} />
-                <Card.Body>
-                  <Card.Title>
-                    {DatosTablaCoches[2].marca} {DatosTablaCoches[2].modelo}
-                  </Card.Title>
-                  <Card.Text>
-                    Matrícula: {DatosTablaCoches[2].matricula}
-                    <p />
-                    {DatosTablaCoches[2].descripción}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
+              {this.card}
             </Col>
           </Row>
         </Container>
