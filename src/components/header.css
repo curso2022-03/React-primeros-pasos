@@ -1,6 +1,6 @@
 .header-navbar {
-  background: linear-gradient(90deg, #ffffff 0%, rgb(165, 158, 158));
-  height: 90px;
+  background: linear-gradient(90deg, #ffffff 40%, rgb(165, 158, 158));
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,6 +58,12 @@
   border-radius: 4px;
   padding: 0.5rem 1rem;
   cursor: pointer;
+}
+
+.navbar-link-profile:hover {
+  background-color: #ffffff;
+  color: rgb(219, 16, 16);
+  transition: all 0.2s ease-out;
 }
 
 .fa-bars {
@@ -122,6 +128,7 @@
     font-size: 1.8rem;
     cursor: pointer;
   }
+
   .navbar-link-mobile {
     display: block;
     text-align: center;
