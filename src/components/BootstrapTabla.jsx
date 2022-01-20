@@ -21,10 +21,8 @@ class BootstrapTabla extends React.Component {
             {ContenidoTabla[this.state.dia].tiempo}
           </Card.Title>
           <Card.Text>
-            <p>
               temperatura: {ContenidoTabla[this.state.dia].temperatura}
               viento: {ContenidoTabla[this.state.dia].viento}
-            </p>
           </Card.Text>
         </Card.Body>
       </Card>
