@@ -24,7 +24,6 @@ class Coches extends React.Component {
           </Card.Title>
           <Card.Text>
             Matrícula: {DatosTablaCoches[this.state.coche].matricula}
-            <p />
             {DatosTablaCoches[this.state.coche].descripción}
           </Card.Text>
         </Card.Body>
