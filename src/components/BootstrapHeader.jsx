@@ -5,10 +5,6 @@ import { Link } from 'react-router-dom';
 import uuid from 'react-uuid';
 import './header.css';
 class BootstrapHeader extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -17,6 +13,7 @@ class BootstrapHeader extends React.Component {
             <img
               className="logo-image"
               src="https://eu01.edcwb.com/buscador/img/centros/logogrande/7348-a9c730d6b2b644f5b9910364ba6af277.jpg"
+              alt="logo"
             />
             <i className="fas fa-user-graduate" />
           </Navbar.Brand>
