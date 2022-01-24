@@ -21,27 +21,27 @@ class BootstrapTabla extends React.Component {
             {ContenidoTabla[this.state.dia].tiempo}
           </Card.Title>
           <Card.Text>
-              temperatura: {ContenidoTabla[this.state.dia].temperatura}
-              viento: {ContenidoTabla[this.state.dia].viento}
+            temperatura: {ContenidoTabla[this.state.dia].temperatura}
+            viento: {ContenidoTabla[this.state.dia].viento}
           </Card.Text>
         </Card.Body>
       </Card>
     );
   }
   cambiaTarjeta(pulsado) {
-    if (pulsado == 'Lunes') {
+    if (pulsado === 'Lunes') {
       this.setState({ dia: 0 });
-    } else if (pulsado == 'Martes') {
+    } else if (pulsado === 'Martes') {
       this.setState({ dia: 1 });
-    } else if (pulsado == 'Miercoles') {
+    } else if (pulsado === 'Miercoles') {
       this.setState({ dia: 2 });
-    } else if (pulsado == 'Jueves') {
+    } else if (pulsado === 'Jueves') {
       this.setState({ dia: 3 });
-    } else if (pulsado == 'Viernes') {
+    } else if (pulsado === 'Viernes') {
       this.setState({ dia: 4 });
-    } else if (pulsado == 'Sabado') {
+    } else if (pulsado === 'Sabado') {
       this.setState({ dia: 5 });
-    } else if (pulsado == 'Domingo') {
+    } else if (pulsado === 'Domingo') {
       this.setState({ dia: 6 });
     }
   }
@@ -53,9 +53,9 @@ class BootstrapTabla extends React.Component {
           <Col lg={8} md={6}>
             <Table responsive>
               <thead>
-                <tr key={uuid()}>
+                <tr>
                   {CabeceraTabla.map((item) => {
-                    return <th>{item}</th>;
+                    return <th key={uuid()}>{item}</th>;
                   })}
                 </tr>
               </thead>
