@@ -28,7 +28,7 @@ class Home extends React.Component {
     ) {
       return (
         <div className="main-site">
-          <h1> Bienvenido! {this.state.user}</h1>
+          <h1> Bienvenido {this.state.user}!</h1>
         </div>
       );
     } else {
@@ -69,6 +69,16 @@ class Home extends React.Component {
         </div>
       );
     }
+  }
+  componentDidMount() {
+    this.setState({
+      user: localStorage.getItem('user'),
+      password: localStorage.getItem('password'),
+    });
+  }
+  componentWillUnmount() {
+    localStorage.setItem('user', this.state.user);
+    localStorage.setItem('password', this.state.password);
   }
 }
 export default Home;
