@@ -1,5 +1,5 @@
 import { PaginaListas } from '../components/paginaListas';
-import { Home } from '../components/Home';
+import Home from '../components/Home';
 import { Perfil } from '../components/Perfil';
 import { PaginaTiempo } from '../components/PaginaTiempo';
 import Coches from '../components/Coches';
