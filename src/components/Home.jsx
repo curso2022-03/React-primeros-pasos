@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
+import { DatosLogin } from '../data/DatosLogin';
 
 class Home extends React.Component {
   constructor(props) {
@@ -7,20 +8,43 @@ class Home extends React.Component {
     this.state = {
       user: '',
       password: '',
+      done: true,
     };
     this.login = this.login.bind(this);
     this.usuarioIntroducido = React.createRef();
     this.contraseñaIntroducida = React.createRef();
+    this.claseLista = '';
   }
 
   login() {
-    this.setState({
-      user: this.usuarioIntroducido.current.value,
-      password: this.contraseñaIntroducida.current.value,
-    });
+    for (let i = 0; i < DatosLogin.length; i++) {
+      if (
+        (DatosLogin[i].usuario === this.usuarioIntroducido.current.value ||
+          DatosLogin[i].email === this.usuarioIntroducido.current.value) &&
+        DatosLogin[i].contraseña === this.contraseñaIntroducida.current.value
+      ) {
+        this.setState({
+          user: this.usuarioIntroducido.current.value,
+          password: this.contraseñaIntroducida.current.value,
+          done: true,
+        });
+      } else {
+        this.setState({
+          done: false,
+        });
+      }
+    }
+  }
+  setElementClass() {
+    if (this.state.done) {
+      this.claseLista = '';
+    } else {
+      this.claseLista = 'is-invalid';
+    }
   }
 
   render() {
+    this.setElementClass();
     if (
       this.state !== null &&
       this.state.user !== null &&
@@ -43,7 +67,11 @@ class Home extends React.Component {
                   type="email"
                   placeholder="Usuario"
                   ref={this.usuarioIntroducido}
+                  className={this.claseLista}
                 />
+                <Form.Control.Feedback type="invalid">
+                  Introduce un usuario o email valido
+                </Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -52,7 +80,11 @@ class Home extends React.Component {
                   type="password"
                   placeholder="Contraseña"
                   ref={this.contraseñaIntroducida}
+                  className={this.claseLista}
                 />
+                <Form.Control.Feedback type="invalid">
+                  Introduce una contraseña valida
+                </Form.Control.Feedback>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Recordarme" />

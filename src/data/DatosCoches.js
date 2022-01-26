@@ -5,7 +5,6 @@ export const TitulosTablaCoches = {
   field3: 'Color',
 };
 
-// TODO: rellenar atributos que faltan para todos los coches
 export const DatosTablaCoches = [
   {
     matricula: '0000 LOL',
