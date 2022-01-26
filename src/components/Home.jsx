@@ -42,20 +42,20 @@ class Home extends React.Component {
       this.claseLista = 'is-invalid';
     }
   }
-
+  componentDidMount() {
+    this.setState({
+      user: localStorage.getItem('user'),
+      password: localStorage.getItem('password'),
+    });
+  }
   render() {
     this.setElementClass();
     if (
-      this.state !== null &&
-      this.state.user !== null &&
-      this.state.user !== ''
+      this.state === null ||
+      this.state.user === null ||
+      this.state.user === '' ||
+      this.state.user === 'null'
     ) {
-      return (
-        <div className="main-site">
-          <h1> Bienvenido {this.state.user}!</h1>
-        </div>
-      );
-    } else {
       return (
         <div className="main-site">
           <h1> Bienvenido!</h1>
@@ -89,6 +89,7 @@ class Home extends React.Component {
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Recordarme" />
               </Form.Group>
+
               <Button
                 variant="primary"
                 type="button"
@@ -100,13 +101,9 @@ class Home extends React.Component {
           </Container>
         </div>
       );
+    } else {
+      return <h1>Bienvenido {this.state.user}!</h1>;
     }
-  }
-  componentDidMount() {
-    this.setState({
-      user: localStorage.getItem('user'),
-      password: localStorage.getItem('password'),
-    });
   }
   componentWillUnmount() {
     localStorage.setItem('user', this.state.user);
