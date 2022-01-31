@@ -23,7 +23,7 @@ class Perfil extends React.Component {
     }
   }
   onClickCerrarSesion() {
-    localStorage.clear();
+    localStorage.clear(); //Para borrar uno concreto removeitem
   }
 
   render() {

@@ -3,6 +3,7 @@ import Home from '../components/Home';
 import Perfil from '../components/Perfil';
 import { PaginaTiempo } from '../components/PaginaTiempo';
 import Coches from '../components/Coches';
+import Animes from '../components/Animes';
 
 export const MenuItems = [
   { id: 1, path: '/', title: 'Home', component: Home },
@@ -15,4 +16,5 @@ export const MenuItems = [
   { id: 3, path: '/perfil', title: 'Perfil', component: Perfil },
   { id: 4, path: '/tiempo', title: 'Tiempo', component: PaginaTiempo },
   { id: 5, path: '/coches', title: 'Coches', component: Coches },
+  { id: 6, path: '/animes', title: 'Animes', component: Animes },
 ];
