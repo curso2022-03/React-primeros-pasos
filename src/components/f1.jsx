@@ -9,10 +9,17 @@ class f1 extends React.Component {
     this.state = {
       selectedItem: '',
       tableData: [],
+      //He añadido estas dos variables porque no consegui sacarlas a partir de selectedItem en el card
+      circuito: '',
+      ganador: '',
     };
   }
   changeSelected = (item) => {
-    this.setState({ selectedItem: item });
+    this.setState({
+      selectedItem: item,
+      circuito: item.Circuit,
+      ganador: item.Results[0].Driver,
+    });
   };
   async componentDidMount() {
     const response = await fetch(
@@ -23,6 +30,9 @@ class f1 extends React.Component {
     this.setState({
       tableData: responseData['MRData']['RaceTable']['Races'],
       selectedItem: responseData['MRData']['RaceTable']['Races'][0],
+      circuito: responseData['MRData']['RaceTable']['Races'][0]['Circuit'],
+      ganador:
+        responseData['MRData']['RaceTable']['Races'][0]['Results'][0]['Driver'],
     });
   }
   render() {
@@ -65,15 +75,15 @@ class f1 extends React.Component {
               </Table>
             </Col>
             <Col lg={4} md={6}>
-              <Card style={{ width: '18rem' }}>
+              <Card style={{ width: '20rem' }}>
                 <Card.Body>
                   <Card.Title>{this.state.selectedItem.raceName}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">
-                    Circuito {console.log(this.state.selectedItem.Circuit)}
+                    Circuito: {this.state.circuito.circuitName}
                   </Card.Subtitle>
                   <Card.Text>
-                    El ganador fue{}
-                    {console.log(this.state.selectedItem.Results)}
+                    El ganador 🏆 fue {this.state.ganador.givenName}{' '}
+                    {this.state.ganador.familyName}
                   </Card.Text>
                 </Card.Body>
               </Card>
