@@ -1,3 +1,4 @@
+import { round } from '@popperjs/core/lib/utils/math';
 import React from 'react';
 import { Card, Container, Table, Row, Col } from 'react-bootstrap';
 import uuid from 'react-uuid';
@@ -14,11 +15,14 @@ class f1 extends React.Component {
     this.setState({ selectedItem: item });
   };
   async componentDidMount() {
-    const response = await fetch('https://ergast.com/api/f1/2021.json');
+    const response = await fetch(
+      'https://ergast.com/api/f1/2021/results/1.json'
+    );
     const responseData = await response.json();
+
     this.setState({
-      tableData: responseData.RaceTable.Races,
-      selectedItem: responseData.RaceTable.Races[0],
+      tableData: responseData['MRData']['RaceTable']['Races'],
+      selectedItem: responseData['MRData']['RaceTable']['Races'][0],
     });
   }
   render() {
@@ -50,9 +54,10 @@ class f1 extends React.Component {
                         <td>{item.round}</td>
                         <td>{item.raceName}</td>
                         <td>{item.date}</td>
+                        <td>{item.time}</td>
                         <td>{item.Circuit.circuitName}</td>
-                        <td>{item.Location.locality}</td>
-                        <td>{item.Location.country}</td>
+                        <td>{item.Circuit.Location.locality}</td>
+                        <td>{item.Circuit.Location.country}</td>
                       </tr>
                     );
                   })}
@@ -60,21 +65,18 @@ class f1 extends React.Component {
               </Table>
             </Col>
             <Col lg={4} md={6}>
-              {/**}
               <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={this.state.selectedItem.image} />
                 <Card.Body>
-                  <Card.Title>{this.state.selectedItem.title}</Card.Title>
+                  <Card.Title>{this.state.selectedItem.raceName}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">
+                    Circuito {console.log(this.state.selectedItem.Circuit)}
+                  </Card.Subtitle>
                   <Card.Text>
-                    Titulo original: {this.state.selectedItem.original_title}
-                    <br />
-                    Director:{this.state.selectedItem.director}
-                    <br />
-                    Argumento:{this.state.selectedItem.description}
+                    El ganador fue{}
+                    {console.log(this.state.selectedItem.Results)}
                   </Card.Text>
                 </Card.Body>
               </Card>
-                {*/}
             </Col>
           </Row>
         </Container>
